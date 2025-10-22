@@ -64,6 +64,11 @@ ruleTester.run("public-api-imports", rule, {
             options: aliasOptions,
         },
         {
+            code: "import { addCommentFormActions } from '@/features/AddCommentForm/model/slices/addCommentFormSlice'",
+            errors: [{ message: "Абсолютный импорт разрешен только из Public API (index.ts)"}],
+            options: aliasOptions,
+        },
+        {
             filename: 'C:\\Users\\tim\\Desktop\\javascript\\production_project\\src\\entities\\StoreDecorator.tsx',
             code: "import { addCommentFormActions, addCommentFormReducer } from '@/entities/Article/testing/file.tsx'",
             errors: [{message: 'Абсолютный импорт разрешен только из Public API (index.ts)'}],
